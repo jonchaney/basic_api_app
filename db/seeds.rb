@@ -30,16 +30,20 @@ synth = Product.create(name: "Roland Juno 60", price: "2900.00")
 mic = Product.create(name: "Sennheiser MD421 II", price: "379.95")
 cv = Product.create(name: "CV/Gate Cable", price: "5.64")
 xlr = Product.create(name: "XLR Cable", price: "10.99")
-vocoder = Product.create(name: "Vocoder", price: "999.99")
+piano = Product.create(name: "piano", price: "19999.99")
 
 # add products to categories
 musical_instruments.products << jazzmaster
 musical_instruments.products << strat
+musical_instruments.products << piano
+musical_instruments.products << piano
+musical_instruments.products << synth
 guitar.products << jazzmaster
 guitar.products << strat
 audio.products << mic
 audio.products << xlr
-keyboard.products << synth 
+keyboard.products << synth
+keyboard.products << piano 
 cables.products << xlr
 cables.products << cv
 
@@ -53,7 +57,7 @@ swayed_order1 = Order.create(user_id: swayed.id)
 jon_order1.products << strat
 jon_order1.products << synth
 jon_order1.products << xlr
-jon_order2.products << vocoder
+jon_order2.products << mic
 jon_order2.products << mic
 jon_order2.products << mic
 maudi_order1.products << xlr
