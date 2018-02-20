@@ -30,7 +30,7 @@ synth = Product.create(name: "Roland Juno 60", price: "2900.00")
 mic = Product.create(name: "Sennheiser MD421 II", price: "379.95")
 cv = Product.create(name: "CV/Gate Cable", price: "5.64")
 xlr = Product.create(name: "XLR Cable", price: "10.99")
-piano = Product.create(name: "piano", price: "19999.99")
+piano = Product.create(name: "Steinway Piano Model D", price: "98500.00")
 
 # add products to categories
 musical_instruments.products << jazzmaster
