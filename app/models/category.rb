@@ -14,13 +14,3 @@ class Category < ApplicationRecord
         ActiveRecord::Base.connection.exec_query(sql)
     end 
 end
-
-
-# User.select('users.id, users.first_name, categories.id, categories.name, COUNT(products.id)')
-#     .joins('orders ON users.id = orders.user_id')
-#     .joins('orders_products ON orders.id = orders_products.order_id')
-#     .joins('products ON orders_products.product_id = products.id')
-#     .joins('categories_products ON orders_products.product_id = categories_products.product_id')
-#     .joins('categories ON categories_products.category_id = categories.id ')
-#     .group('users.id, categories.name, categories.id')
-#     .order('users.id')
