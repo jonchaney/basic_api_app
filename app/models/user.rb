@@ -10,7 +10,7 @@ class User < ApplicationRecord
         .joins('JOIN categories_products ON orders_products.product_id = categories_products.product_id')
         .joins('JOIN categories ON categories_products.category_id = categories.id ')
         .group('users.id, categories.id, categories.name')
-        .order('users.id').to_sql
+        .order('users.id')
 
         ActiveRecord::Base.connection.exec_query(sql)
     end 

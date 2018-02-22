@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
     def index
-        if params['time_span']
+        if params['time_span'] && params['start'] && params['end']
             @products = sales_breakdown
         else 
             @products = Product.all
@@ -36,7 +36,7 @@ class ProductsController < ApplicationController
                .group("products.name, products.id, EXTRACT(MONTH FROM orders.created_at)")
         end 
         
-        if params['csv']
+        if params['csv'] == "true"
             CSV.open("app/assets/sales-breakdown-#{start_time}-to-#{end_time}-per-#{time_span}.csv", "wb") do |csv|
                 csv << ["id","name", "price", "#{time_span}", "quantity_sold"]
                 @products.all.each do |product|
@@ -44,7 +44,7 @@ class ProductsController < ApplicationController
                 end
             end
         end
-        
+
         @products
     end 
 end
