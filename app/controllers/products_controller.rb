@@ -4,9 +4,8 @@ class ProductsController < ApplicationController
         if params['time_span']
             @products = sales_breakdown
         else 
-            @products = Products.all
-        end 
-    
+            @products = Product.all
+        end
         render json: @products.as_json
     end 
 
@@ -45,6 +44,7 @@ class ProductsController < ApplicationController
                 end
             end
         end
+        
         @products
     end 
 end
