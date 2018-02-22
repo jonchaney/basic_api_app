@@ -11,6 +11,6 @@ class Category < ApplicationRecord
         .group('users.id, categories.id, categories.name')
         .order('users.id').to_sql
 
-        ActiveRecord::Base.connection.exec_query(sql)
+        ActiveRecord::Base.connection.exec_query(sql).as_json
     end 
 end
